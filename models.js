@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
+//Schema for saving search queries and counting them
 const searchSchema = new Schema({
 	terms: {
 		type: String
@@ -16,6 +16,14 @@ const searchSchema = new Schema({
 	timestamps: true
 });
 
-var Search = mongoose.model('Search', searchSchema);
-
-module.exports = Search;
+//Schema for counting blog views
+const blogcountSchema = new Schema({
+	blog: {
+		type: String
+	},
+	count: {
+		type: Number
+	},
+},{
+		timestamps: true
+});
